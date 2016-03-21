@@ -9,16 +9,17 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.WindowManager;
-import android.widget.EditText;
 
 import com.itheima.demo.R;
 import com.itheima.util.SoftKeyboardUtil;
 import com.itheima.util.SoftKeyboardUtil.OnSoftKeyboardChangeListener;
+import com.itheima.view.MyEditTextView;
 import com.itheima.view.WordFallView;
 
 public class WordFallActivity extends Activity{
-	private EditText et_word;
+	private MyEditTextView et_word;
 	private WordFallView wordView;
 	private Timer timer;
 	private TimerTask timerTask;
@@ -27,6 +28,10 @@ public class WordFallActivity extends Activity{
 	private static float[] curY;
 	private static int keyboardHeight;  //键盘的高度
 	private static int screenHeight;  //手机屏幕的高度
+	//private static int prevLength;
+	
+	//private Handler handler = new Handler();
+	//private Runnable runnable;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -35,10 +40,29 @@ public class WordFallActivity extends Activity{
 		setContentView(R.layout.word_fall_activity);
 		init();
 		setListener();
+		
+		/**
+		runnable = new Runnable() {
+			@Override
+			public void run() {
+				int curLength = et_word.getText().toString().trim().length();
+				Log.i("test","curLength:"+curLength);
+				if(prevLength!=0 && prevLength == curLength){
+					wordView.myPaint.setXfermode(new PorterDuffXfermode(Mode.CLEAR));
+			        wordView.myCanvas.drawPaint(wordView.myPaint);
+			        wordView.myPaint.setXfermode(new PorterDuffXfermode(Mode.SRC));
+				}else{
+					prevLength = curLength;
+				}
+				handler.postDelayed(this, 2000);
+			}
+		};
+		handler.postDelayed(runnable,0);
+		**/
 	}
 	
 	private void init(){
-		et_word = (EditText)findViewById(R.id.et_word);
+		et_word = (MyEditTextView)findViewById(R.id.et_word);
 		wordView = (WordFallView)findViewById(R.id.word_content);
 		
 		initX = new float[]{100,200,300,400,500,600};
@@ -67,6 +91,13 @@ public class WordFallActivity extends Activity{
 			public void afterTextChanged(Editable s) { 
 				wordView.init(et_word.getText().toString().trim(),initX,curY);
 				wordView.invalidate();
+			}
+		});
+		
+		et_word.setOnInputCompleteListener(new MyEditTextView.OnInputCompleteListener() {
+			@Override
+			public void onInputComplete() {
+				Log.i("test", "input is :"+et_word.getText().toString().trim());
 			}
 		});
 		

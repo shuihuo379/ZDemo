@@ -10,7 +10,8 @@ import android.view.View;
 import com.itheima.util.StringUtil;
 
 public class WordFallView extends View{
-	private Paint myPaint;
+	public Canvas myCanvas;
+	public Paint myPaint;
 	private String content;  //输入框中输入的文本内容 
 	
 	private float[] initX;
@@ -37,6 +38,7 @@ public class WordFallView extends View{
 	
 	@Override
 	protected void onDraw(Canvas canvas) {
+		this.myCanvas = canvas;
 		if(StringUtil.isEmpty(this.content)){
 			return;
 		}
