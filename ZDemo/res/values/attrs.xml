@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CircleImageView">
+        <attr name="name" format="string" />
+    </declare-styleable>
+    
+    <!-- 自定义圆形ImageView属性 -->
+    <declare-styleable name="MyCircleImageView">
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+    </declare-styleable>
+    
+    <declare-styleable name="MyTagCloudLinkView">
+        <attr name="tagLayoutColor" format="color" />
+        <attr name="tagTextColor" format="color" />
+        <attr name="tagTextSize" format="dimension" />
+        <attr name="isDeletable" format="boolean" />
+        <attr name="deletableTextColor" format="color" />
+        <attr name="deletableTextSize" format="dimension" />
+    </declare-styleable>
+    
+    <declare-styleable name="MyFiveStarView">
+        <attr name="lRadius" format="dimension"/>
+        <attr name="x" format="integer"/>
+        <attr name="y" format="integer"/>
+    </declare-styleable>
+    
+</resources>

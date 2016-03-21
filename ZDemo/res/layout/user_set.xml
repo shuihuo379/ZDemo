@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_gray"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp50"
+        android:background="@color/main_green"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/user_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:paddingLeft="@dimen/dp10"
+            android:paddingRight="@dimen/dp10"
+            android:text="&lt;"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/sp25" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp5"
+            android:layout_marginRight="@dimen/dp5"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="我的信息"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/sp18" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingLeft="@dimen/dp10"
+            android:paddingRight="@dimen/dp10"
+            android:text="&lt;"
+            android:textSize="@dimen/sp18"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/dp10"
+        android:shrinkColumns="1"
+        android:stretchColumns="0,1" >
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:gravity="center_vertical"
+            android:padding="@dimen/dp10" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="账号"
+                android:textColor="@color/darkgray"
+                android:textSize="@dimen/sp15" />
+
+            <TextView
+                android:id="@+id/tv_account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_span="2"
+                android:minEms="11"
+                android:textColor="@color/darkgray"
+                android:textSize="@dimen/sp15" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:background="@android:color/white"
+            android:gravity="center_vertical"
+            android:padding="@dimen/dp10" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="姓名"
+                android:textColor="@color/darkgray"
+                android:textSize="@dimen/sp15" />
+
+            <TextView
+                android:id="@+id/tv_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingRight="@dimen/dp10"
+                android:textColor="@color/darkgray"
+                android:textSize="@dimen/sp15" />
+
+            <ImageView
+                android:layout_width="@dimen/dp15"
+                android:layout_height="@dimen/dp15"
+                android:gravity="center"
+                android:scaleType="centerInside"
+                android:src="@drawable/arrow"
+                android:textColor="@color/darkgray"
+                android:textSize="@dimen/sp15" />
+        </TableRow>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp10"
+            android:text="车辆信息"
+            android:textColor="@color/darkgray"
+            android:textSize="@dimen/sp15" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:gravity="center_vertical"
+            android:padding="@dimen/dp10" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="车牌号"
+                android:textColor="@color/darkgray"
+                android:textSize="@dimen/sp15" />
+
+            <TextView
+                android:id="@+id/tv_cardnumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingRight="@dimen/dp10"
+                android:textColor="@color/darkgray"
+                android:textSize="@dimen/sp15" />
+
+            <ImageView
+                android:id="@+id/carInfo_clear"
+                android:layout_width="@dimen/dp15"
+                android:layout_height="@dimen/dp15"
+                android:scaleType="centerInside"
+                android:src="@drawable/arrow"
+                android:textColor="@color/darkgray"
+                android:textSize="@dimen/sp15" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:background="@android:color/white"
+            android:gravity="center_vertical"
+            android:padding="@dimen/dp10" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="品牌"
+                android:textColor="@color/darkgray"
+                android:textSize="@dimen/sp15" />
+
+            <Spinner
+                android:id="@+id/carInfo_brand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp15"
+                android:layout_span="2"
+                android:background="@drawable/rectangle_rrow_right"
+                android:spinnerMode="dropdown" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:background="@android:color/white"
+            android:gravity="center_vertical"
+            android:padding="@dimen/dp10" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="系列"
+                android:textColor="@color/darkgray"
+                android:textSize="@dimen/sp15" />
+
+            <Spinner
+                android:id="@+id/carInfo_series"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp15"
+                android:layout_span="2"
+                android:background="@drawable/rectangle_rrow_right"
+                android:spinnerMode="dropdown" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:background="@android:color/white"
+            android:gravity="center_vertical"
+            android:padding="@dimen/dp10" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=" 发动机类型"
+                android:textColor="@color/darkgray"
+                android:textSize="@dimen/sp15" />
+
+            <Spinner
+                android:id="@+id/carInfo_engineType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp15"
+                android:layout_span="2"
+                android:background="@drawable/rectangle_rrow_right"
+                android:spinnerMode="dropdown" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:background="@android:color/white"
+            android:gravity="center_vertical"
+            android:padding="@dimen/dp10" >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="排量"
+                    android:textColor="@color/darkgray"
+                    android:textSize="@dimen/sp15" />
+
+                <TextView
+                    android:id="@+id/carInfo_displacement_unit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="(L)"
+                    android:textColor="@color/darkgray"
+                    android:textSize="@dimen/sp15" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_disp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp10"
+                android:clickable="true"
+                android:focusable="true"
+                android:textColor="@color/darkgray"
+                android:textSize="@dimen/sp15" />
+
+            <ImageView
+                android:layout_width="@dimen/dp15"
+                android:layout_height="@dimen/dp15"
+                android:gravity="center"
+                android:scaleType="centerInside"
+                android:src="@drawable/arrow"
+                android:textColor="@color/darkgray"
+                android:textSize="@dimen/sp15" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:background="@android:color/white"
+            android:gravity="center_vertical"
+            android:padding="@dimen/dp10" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="总里程(km)"
+                android:textColor="@color/darkgray"
+                android:textSize="@dimen/sp15" />
+
+            <TextView
+                android:id="@+id/tv_total_mileage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp10"
+                android:clickable="true"
+                android:focusable="true"
+                android:textColor="@color/darkgray"
+                android:textSize="@dimen/sp15" />
+
+            <ImageView
+                android:layout_width="@dimen/dp15"
+                android:layout_height="@dimen/dp15"
+                android:gravity="center"
+                android:scaleType="centerInside"
+                android:src="@drawable/arrow"
+                android:textColor="@color/darkgray"
+                android:textSize="@dimen/sp15" />
+        </TableRow>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp10"
+            android:text="油价信息"
+            android:textColor="@color/darkgray"
+            android:textSize="@dimen/sp15" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:gravity="center_vertical"
+            android:padding="@dimen/dp10" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="油价"
+                android:textColor="@color/darkgray"
+                android:textSize="@dimen/sp15" />
+
+            <TextView
+                android:id="@+id/tv_gas_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp10"
+                android:textColor="@color/darkgray"
+                android:textSize="@dimen/sp15" />
+
+            <ImageView
+                android:layout_width="@dimen/dp15"
+                android:layout_height="@dimen/dp15"
+                android:gravity="center"
+                android:src="@drawable/arrow"
+                android:textColor="@color/darkgray"
+                android:textSize="@dimen/sp15" />
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>

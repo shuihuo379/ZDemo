@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eee"
+    android:orientation="vertical" >
+
+    <!-- csdn app 标题栏 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#5CACEE"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="4dp"
+            android:src="@drawable/biz_navigation_tab_news_pressed" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:src="@drawable/base_action_bar_back_divider" />
+
+        <TextView
+            android:id="@+id/headTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="4dp"
+            android:layout_weight="1"
+            android:text="CSDN资讯"
+            android:textColor="@color/white"
+            android:textSize="21sp"
+            android:textStyle="bold" >
+        </TextView>
+    </LinearLayout>
+
+    <!-- viewpager上方的标签 -->
+    <com.viewpager.indicator.TabPageIndicator
+        android:id="@+id/id_indicator"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#445CACEE" >
+    </com.viewpager.indicator.TabPageIndicator>
+	
+    <!-- viewpager主体内容 -->
+    <android.support.v4.view.ViewPager
+        android:id="@+id/id_pager"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+</LinearLayout>

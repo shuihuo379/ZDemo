@@ -1,0 +1,9 @@
+<resources>
+
+    <string name="app_name">MyDemo</string>
+	<string name="location">定位</string>
+    <string name="route_plan">路径规划</string>
+    <string name="offline_map">离线地图</string>
+    <string name="nearby_search">附近</string>
+    <string name="about">关于</string>
+</resources>

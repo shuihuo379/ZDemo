@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_green_light"
+    android:orientation="vertical" >
+
+    <RadioGroup
+        android:id="@+id/up_radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@android:color/white"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/up_radio1"
+            style="@style/frame_pager_tab_common"
+            android:checked="true"
+            android:text="上方一" />
+
+        <RadioButton
+            android:id="@+id/up_radio2"
+            style="@style/frame_pager_tab_common"
+            android:text="上方二" />
+
+        <RadioButton
+            android:id="@+id/up_radio3"
+            style="@style/frame_pager_tab_common"
+            android:text="上方三" />
+    </RadioGroup>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/up_vp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <FrameLayout
+            android:id="@+id/up_fl_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+        </FrameLayout>
+    </RelativeLayout>
+
+    <RadioGroup
+        android:id="@+id/bottom_radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@android:color/white"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/bottom_radio1"
+            style="@style/frame_pager_tab_common"
+            android:checked="true"
+            android:text="下方一" />
+
+        <RadioButton
+            android:id="@+id/bottom_radio2"
+            style="@style/frame_pager_tab_common"
+            android:text="下方二" />
+
+        <RadioButton
+            android:id="@+id/bottom_radio3"
+            style="@style/frame_pager_tab_common"
+            android:text="下方三" />
+    </RadioGroup>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/bottom_vp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <FrameLayout
+            android:id="@+id/bottom_fl_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+        </FrameLayout>
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 主题绿 -->
+    <color name="main_green">#84BB43</color>
+    <!-- 主题灰 -->
+    <color name="main_gray">#F6F6F6</color>
+    <color name="lightgray">#999999</color>
+    <color name="darkgray">#666666</color>
+    
+    <color name="white">#ffffff</color>
+    <color name="blue">#04AEDA</color>
+    
+    <!-- bg color -->
+    <color name="main_color">#ff67c5cd</color>
+    <color name="color_login_top">#ff66c5cd</color>
+    <color name="color_login_bottom">#ffe5e7e2</color>
+    <color name="pup_bg_color">#FF8E52</color>
+    <color name="user_divider">#CACACA</color>
+    <color name="atel_theme_color">#FFFFFF</color>
+    <color name="btn_log_out">#FE0000</color>
+    <color name="course_detail_top_bg">#ACD9FF</color>
+    <color name="check_text_bg">#F7F7F7</color>
+    <color name="alert_dialog_color">#ff313c41</color>
+    <color name="btn_yellow_color">#fffe9900</color>
+    <color name="tex_answer_bg_color">#ffefefef</color>
+    <color name="btn_login_color">#ff2fbce7</color>
+    <color name="course_search_color">#ffe0e0e0</color>
+    <color name="course_search_bottom_line_color">#ff65c2ff</color>
+
+    <!-- 小按钮系列,用于shape -->
+    <!-- 橙色小按钮背景 -->
+    <color name="btn_yellow_bg_color">#FF8E52</color>
+    <color name="btn_yellow_stroke_color">#eb5200</color>
+    <!-- 蓝色背景 -->
+    <color name="btn_blue_bg_color">#ff129dee</color>
+    <color name="btn_blue_stroke_color">#ff00629a</color>
+    <!-- 红色按钮 -->
+    <color name="btn_red_bg_color">#ffff4343</color>
+    <color name="btn_red_stroke_color">#ffff2f2f</color>
+    <!-- 灰色按钮 -->
+    <color name="btn_gray_bg_color">#ffd1d1d1</color>
+    <color name="btn_gray_stroke_color">#ff6a6a6a</color>
+    <!-- 绿色按钮 -->
+    <color name="btn_green_bg_color">#ff42c601</color>
+
+    <!-- 个人信息 上面背景色 -->
+    <color name="user_header_color">#ED5736</color>
+
+    <!-- 主界面空白背景色 -->
+    <color name="main_bg_color">#ffe6e7e6</color>
+
+    <!-- 知识库 课程 下面的二级POP背景色 及边框色 -->
+    <color name="pop_sec_bg">#f3f8f1</color>
+    <color name="pop_sec_bg_stroke">#c1c9bd</color>
+    <color name="pop_sec_font">#ffc1c9bd</color>
+
+    <!-- 问题中心点击开始回答 背景色 -->
+    <color name="que_answer_bg">#fff1f1f1</color>
+    <color name="que_answer_btn_bg">#ff71cd9e</color>
+
+    <!-- 问题中我的问题 -->
+    <drawable name="que_check_bg">#ffffff</drawable>
+    <drawable name="que_unCheck_bg">@color/main_bg_color</drawable>
+
+    <color name="que_tex_un_solved">#fff9c555</color>
+    <color name="que_tex_solved">@android:color/black</color>
+
+    <!-- header back按钮点击背景色 -->
+    <color name="header_back_bg">#FF7F00</color>
+    <!-- menu 背景色 -->
+    <color name="menu_bg_color">#313131</color>
+    <!-- menu 点击背景色 -->
+    <color name="menu_course_bg">#ff00b091</color>
+    <color name="menu_exam_bg">#ff00b8e4</color>
+    <color name="menu_knowledge_bg">#ffff7d00</color>
+    <color name="menu_favorite_bg">#ffffff00</color>
+    <color name="menu_survey_bg">#ff3a7dda</color>
+    <color name="menu_download_bg">#ffa67dc8</color>
+    <color name="menu_question_bg">#ff74c9be</color>
+    <color name="menu_account_bg">#ffff17a3</color>
+    <color name="menu_set_bg">#ff457e81</color>
+    <color name="menu_shutdown_bg">#fff12938</color>
+
+    <!-- menu 分割线 颜色 -->
+    <color name="menu_divider_color">#666666</color>
+    <!-- 写信 -->
+    <color name="email_write_bg">#3367c5cd</color>
+    <color name="email_write_bg_dark">#ff67c5cd</color>
+    <color name="email_lime_green">#32cd32</color>
+    <color name="email_mediumsea_green">#3cb371</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="light_black">#ececec</color>
+    <color name="driving_bg">#03BDF6</color>
+
+</resources>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#eeeeee" >
+    <com.itheima.view.MyViewGroup
+        android:id="@+id/myViewGroup"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/holo_orange_light" 
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="50dp">
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:gravity="center"
+            android:text="第一个TextView" 
+            android:background="@android:color/holo_green_light"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"/>
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="200dp"
+            android:gravity="center"
+            android:text="第二个TextView" 
+            android:background="@android:color/holo_red_light"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"/>
+    </com.itheima.view.MyViewGroup>
+</LinearLayout>
