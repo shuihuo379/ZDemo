@@ -53,7 +53,7 @@ public class WordFallView extends View{
 		myPaint = new Paint(); // 创建画笔  
 		myPaint.setColor(Color.YELLOW); // 设置颜色
 		myPaint.setAntiAlias(true); // 给Paint加上抗锯齿标志
-		myPaint.setTextSize(36);
+		myPaint.setTextSize(25);
 	}
 	
 	/**

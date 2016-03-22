@@ -10,16 +10,20 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.View.OnKeyListener;
 import android.view.WindowManager;
+import android.widget.EditText;
 
 import com.itheima.demo.R;
 import com.itheima.util.SoftKeyboardUtil;
+import com.itheima.util.StringUtil;
 import com.itheima.util.SoftKeyboardUtil.OnSoftKeyboardChangeListener;
-import com.itheima.view.MyEditTextView;
 import com.itheima.view.WordFallView;
 
 public class WordFallActivity extends Activity{
-	private MyEditTextView et_word;
+	private EditText et_word;
 	private WordFallView wordView;
 	private Timer timer;
 	private TimerTask timerTask;
@@ -28,8 +32,10 @@ public class WordFallActivity extends Activity{
 	private static float[] curY;
 	private static int keyboardHeight;  //键盘的高度
 	private static int screenHeight;  //手机屏幕的高度
-	//private static int prevLength;
+	private static int scanTime = 200; //单位毫秒
+	private static float curSpeed = 0.1f; //下落的速度(px/ms)
 	
+	//private static int prevLength;
 	//private Handler handler = new Handler();
 	//private Runnable runnable;
 	
@@ -41,16 +47,16 @@ public class WordFallActivity extends Activity{
 		init();
 		setListener();
 		
-		/**
+	    /**
 		runnable = new Runnable() {
 			@Override
 			public void run() {
 				int curLength = et_word.getText().toString().trim().length();
 				Log.i("test","curLength:"+curLength);
 				if(prevLength!=0 && prevLength == curLength){
-					wordView.myPaint.setXfermode(new PorterDuffXfermode(Mode.CLEAR));
-			        wordView.myCanvas.drawPaint(wordView.myPaint);
-			        wordView.myPaint.setXfermode(new PorterDuffXfermode(Mode.SRC));
+					//wordView.myPaint.setXfermode(new PorterDuffXfermode(Mode.CLEAR));
+			        //wordView.myCanvas.drawPaint(wordView.myPaint);
+			        //wordView.myPaint.setXfermode(new PorterDuffXfermode(Mode.SRC));
 				}else{
 					prevLength = curLength;
 				}
@@ -62,17 +68,25 @@ public class WordFallActivity extends Activity{
 	}
 	
 	private void init(){
-		et_word = (MyEditTextView)findViewById(R.id.et_word);
+		et_word = (EditText)findViewById(R.id.et_word);
 		wordView = (WordFallView)findViewById(R.id.word_content);
 		
-		initX = new float[]{100,200,300,400,500,600};
+		initX = new float[]{50,100,150,200,250};
 		curY = new float[initX.length];
+		for(int i=0;i<curY.length;i++){
+			curY[i] = new Random().nextInt(200);  //初始化坐标位置
+		}
 		int[] screenInfos = getScreenWidthAndHeight(this);
 		screenHeight = screenInfos[1];  //记录屏幕的宽度和高度,单位为像素
 		
 		timer = new Timer();
 		timerTask = new MyTask();
-		timer.schedule(timerTask,0,200); //启动定时任务
+	}
+	
+	@Override
+	protected void onResume() {
+		timer.schedule(timerTask,0,scanTime); //启动定时任务
+		super.onResume();
 	}
 	
 	private void setListener(){
@@ -84,7 +98,12 @@ public class WordFallActivity extends Activity{
 			
 			@Override
 			public void beforeTextChanged(CharSequence s, int start, int count,int after) {
-				
+				if(StringUtil.isEmpty(et_word.getText().toString().trim())){
+					Log.i("test","restart...");
+					for(int i=0;i<curY.length;i++){
+						curY[i] = new Random().nextInt(200); //重新初始化坐标位置
+					}
+				}
 			}
 			
 			@Override
@@ -94,10 +113,26 @@ public class WordFallActivity extends Activity{
 			}
 		});
 		
-		et_word.setOnInputCompleteListener(new MyEditTextView.OnInputCompleteListener() {
+		/**
+		et_word.setOnEditorActionListener(new OnEditorActionListener() {
 			@Override
-			public void onInputComplete() {
-				Log.i("test", "input is :"+et_word.getText().toString().trim());
+			public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+				 if(actionId == EditorInfo.IME_ACTION_SEARCH){  
+					 return true;
+				 }
+				return false;
+			}
+		});
+		**/
+		
+		et_word.setOnKeyListener(new OnKeyListener() {
+			@Override
+			public boolean onKey(View view, int keyCode, KeyEvent event) {
+				if(keyCode == KeyEvent.KEYCODE_ENTER && event.getAction() == KeyEvent.ACTION_DOWN){  
+					curSpeed+=0.01f;
+					return true;
+				}
+				return false;
 			}
 		});
 		
@@ -129,7 +164,7 @@ public class WordFallActivity extends Activity{
 				if(curY[i]>=screenHeight-keyboardHeight){
 					curY[i] = 0;  //重置坐标 
 				}
-				curY[i] = curY[i] + new Random().nextInt(50)+50;
+				curY[i] = curY[i] + curSpeed*scanTime;
 			}
 			wordView.init(et_word.getText().toString().trim(),initX,curY);
 			wordView.postInvalidate();  //子线程中刷新View

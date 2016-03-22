@@ -4,11 +4,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical" 
     android:background="@android:color/darker_gray">
-    <com.itheima.view.MyEditTextView 
+    <EditText
         android:id="@+id/et_word"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:digits="0123456789abcdefghigklmnopqrstuvwxyz"/>
+        android:singleLine="true"
+        android:digits="0123456789abcdefghigklmnopqrstuvwxyz"
+        android:imeOptions="actionSearch"/>
     
 	<com.itheima.view.WordFallView 
 	    android:id="@+id/word_content"
