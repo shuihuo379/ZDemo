@@ -289,6 +289,22 @@
             	<category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+        <!-- AlarmManagerActivity在activity，broadcastReceiver,service中执行计时操作 -->
+        <activity 
+            android:name="com.itheima.ui.demo.AlarmManagerActivity"
+            android:configChanges="locale|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity android:name="com.itheima.ui.demo.ActionActivity" >
+        </activity>
+        <receiver android:name="com.itheima.ui.demo.ActionBroadCast" >
+        </receiver>
+        <service android:name="com.itheima.ui.demo.ActionService" >
+        </service>
+        
+        
 
         <!-- ###################百度地图综合项目###################### -->
         <activity

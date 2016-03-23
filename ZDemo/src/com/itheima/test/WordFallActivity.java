@@ -11,15 +11,17 @@ import android.text.TextWatcher;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnKeyListener;
+import android.view.inputmethod.InputMethodManager;
 import android.view.WindowManager;
 import android.widget.EditText;
 
 import com.itheima.demo.R;
 import com.itheima.util.SoftKeyboardUtil;
-import com.itheima.util.StringUtil;
 import com.itheima.util.SoftKeyboardUtil.OnSoftKeyboardChangeListener;
+import com.itheima.util.StringUtil;
 import com.itheima.view.WordFallView;
 
 public class WordFallActivity extends Activity{
@@ -31,62 +33,37 @@ public class WordFallActivity extends Activity{
 	private static float[] initX;
 	private static float[] curY;
 	private static int keyboardHeight;  //键盘的高度
+	private static int screenWidth;  //手机屏幕的宽度
 	private static int screenHeight;  //手机屏幕的高度
 	private static int scanTime = 200; //单位毫秒
 	private static float curSpeed = 0.1f; //下落的速度(px/ms)
 	
-	//private static int prevLength;
-	//private Handler handler = new Handler();
-	//private Runnable runnable;
-	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
+		getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
 		setContentView(R.layout.word_fall_activity);
 		init();
 		setListener();
-		
-	    /**
-		runnable = new Runnable() {
-			@Override
-			public void run() {
-				int curLength = et_word.getText().toString().trim().length();
-				Log.i("test","curLength:"+curLength);
-				if(prevLength!=0 && prevLength == curLength){
-					//wordView.myPaint.setXfermode(new PorterDuffXfermode(Mode.CLEAR));
-			        //wordView.myCanvas.drawPaint(wordView.myPaint);
-			        //wordView.myPaint.setXfermode(new PorterDuffXfermode(Mode.SRC));
-				}else{
-					prevLength = curLength;
-				}
-				handler.postDelayed(this, 2000);
-			}
-		};
-		handler.postDelayed(runnable,0);
-		**/
 	}
 	
 	private void init(){
 		et_word = (EditText)findViewById(R.id.et_word);
 		wordView = (WordFallView)findViewById(R.id.word_content);
 		
-		initX = new float[]{50,100,150,200,250};
+		int[] screenInfos = getScreenWidthAndHeight(this);
+		screenWidth = screenInfos[0];
+		screenHeight = screenInfos[1];  //记录屏幕的宽度和高度,单位为像素
+		
+		initX = new float[]{screenWidth/6,screenWidth/3,screenWidth/2,2*screenWidth/3,5*screenWidth/6};
 		curY = new float[initX.length];
 		for(int i=0;i<curY.length;i++){
 			curY[i] = new Random().nextInt(200);  //初始化坐标位置
 		}
-		int[] screenInfos = getScreenWidthAndHeight(this);
-		screenHeight = screenInfos[1];  //记录屏幕的宽度和高度,单位为像素
 		
 		timer = new Timer();
 		timerTask = new MyTask();
-	}
-	
-	@Override
-	protected void onResume() {
-		timer.schedule(timerTask,0,scanTime); //启动定时任务
-		super.onResume();
+		timer.schedule(timerTask,500,scanTime); //启动定时任务
 	}
 	
 	private void setListener(){
@@ -99,7 +76,6 @@ public class WordFallActivity extends Activity{
 			@Override
 			public void beforeTextChanged(CharSequence s, int start, int count,int after) {
 				if(StringUtil.isEmpty(et_word.getText().toString().trim())){
-					Log.i("test","restart...");
 					for(int i=0;i<curY.length;i++){
 						curY[i] = new Random().nextInt(200); //重新初始化坐标位置
 					}
@@ -157,6 +133,17 @@ public class WordFallActivity extends Activity{
 	     return new int[]{screenWidth,screenHeight};
 	}
 	
+	@Override
+	public boolean onTouchEvent(MotionEvent event) {
+		 if(null != this.getCurrentFocus()){
+            //点击空白位置 隐藏软键盘
+            InputMethodManager mInputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+            return mInputMethodManager.hideSoftInputFromWindow(this.getCurrentFocus().getWindowToken(), 0);
+        }
+        return super.onTouchEvent(event);
+	}
+	
+	
 	class MyTask extends TimerTask{
 		@Override
 		public void run() {
@@ -172,8 +159,19 @@ public class WordFallActivity extends Activity{
 	}
 	
 	@Override
+	public boolean onKeyUp(int keyCode, KeyEvent event) {
+		if(keyCode == KeyEvent.KEYCODE_SEARCH){
+			curSpeed-=0.01f;
+			return true;
+		}
+		return super.onKeyUp(keyCode, event);
+	}
+	
+	@Override
 	protected void onDestroy() {
 		super.onDestroy();
 		timerTask.cancel();  //关闭定时器
+		timerTask = null;
+		timer = null;
 	}
 }
