@@ -7,16 +7,9 @@ import android.os.IBinder;
 import android.util.Log;
 
 public class MyAppWidgetService extends Service{
-	private static final String TAG="test";
-	private final String ACTION_UPDATE_ALL = "com.itheima.widget.UPDATE_ALL"; //更新 widget的广播对应的action
-	
-	// 周期性更新 widget 的周期
-	private static final int UPDATE_TIME = 5000;
-	// 周期性更新 widget 的线程
-	private UpdateThread mUpdateThread;
+	private UpdateThread mUpdateThread; //周期性更新 widget 的线程
 	private Context mContext;
-	// 更新周期的计数
-	private int count=0; 
+	private int count=0;  //更新周期的计数
 	
 	@Override
 	public void onCreate() {
@@ -61,7 +54,7 @@ public class MyAppWidgetService extends Service{
 	 */
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
-		Log.d(TAG, "onStartCommand");		
+		Log.d(MyAppWidgetConstants.TAG, "onStartCommand");		
 		super.onStartCommand(intent, flags, startId);
 		
 	    return START_STICKY;
@@ -74,11 +67,11 @@ public class MyAppWidgetService extends Service{
             try {
 	            count = 0;
 	            while (true) {
-	            	Log.i(TAG, "run ... count:"+count);
+	            	Log.i(MyAppWidgetConstants.TAG, "run ... count:"+count);
 	            	count++;
-	        		Intent updateIntent=new Intent(ACTION_UPDATE_ALL);
-	        		mContext.sendBroadcast(updateIntent);
-	                Thread.sleep(UPDATE_TIME);
+	        		Intent updateIntent=new Intent(MyAppWidgetConstants.ACTION_UPDATE_ALL);
+	        		mContext.sendBroadcast(updateIntent);  //发送更新广播
+	                Thread.sleep(MyAppWidgetConstants.UPDATE_TIME);
 	            } 
             }catch (InterruptedException e) {
             	// 将 InterruptedException 定义在while循环之外，意味着抛出 InterruptedException 异常时，终止线程。

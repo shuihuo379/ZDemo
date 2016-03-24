@@ -304,7 +304,21 @@
         <service android:name="com.itheima.ui.demo.ActionService" >
         </service>
         
+        <!-- 声明widget对应的AppWidgetProvider -->
+        <receiver android:name="com.itheima.widget.MyAppWidgetProvider">
+            <intent-filter>
+				<action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+				<action android:name="com.itheima.widget.UPDATE_ALL"/>
+			</intent-filter>
+			<meta-data android:name="android.appwidget.provider"
+				android:resource="@xml/my_appwidget_info" />
+        </receiver>
         
+		<service android:name="com.itheima.widget.MyAppWidgetService" >
+            <intent-filter>
+				<action android:name="android.appwidget.action.MY_APP_WIDGET_SERVICE" />
+			</intent-filter>
+		</service>
 
         <!-- ###################百度地图综合项目###################### -->
         <activity
