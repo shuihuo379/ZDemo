@@ -308,7 +308,7 @@
         <receiver android:name="com.itheima.widget.MyAppWidgetProvider">
             <intent-filter>
 				<action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-				<action android:name="com.itheima.widget.UPDATE_ALL"/>
+				<action android:name="com.itheima.widget.UPDATE"/>
 			</intent-filter>
 			<meta-data android:name="android.appwidget.provider"
 				android:resource="@xml/my_appwidget_info" />

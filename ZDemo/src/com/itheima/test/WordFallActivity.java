@@ -40,7 +40,7 @@ public class WordFallActivity extends Activity{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+		getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
 		setContentView(R.layout.word_fall_activity);
 		init();
 		setListener();
@@ -150,6 +150,9 @@ public class WordFallActivity extends Activity{
 				if(curY[i]>=screenHeight-keyboardHeight){
 					curY[i] = 0;  //重置坐标 
 				}
+				if(curSpeed<=0){
+					curSpeed=0f;
+				}
 				curY[i] = curY[i] + curSpeed*scanTime;
 			}
 			wordView.init(et_word.getText().toString().trim(),initX,curY);
@@ -160,7 +163,11 @@ public class WordFallActivity extends Activity{
 	@Override
 	public boolean onKeyUp(int keyCode, KeyEvent event) {
 		if(keyCode == KeyEvent.KEYCODE_SEARCH){
-			curSpeed-=0.01f;
+			if(curSpeed<=0){
+				curSpeed=0f;
+			}else{
+				curSpeed-=0.01f;
+			}
 			return true;
 		}
 		return super.onKeyUp(keyCode, event);
