@@ -17,7 +17,10 @@ import android.widget.RemoteViews;
 
 import com.itheima.demo.R;
 
-
+/**
+ * 普通的AppWidget使用案例 
+ * @author zhangming
+ */
 public class MyAppWidgetProvider extends AppWidgetProvider{
 	private static Set idsSet = new HashSet(); // 保存 widget的id的HashSet,每新建一个 widget,都会为该 widget分配一个 id
 	private boolean DEBUG = false; 
@@ -97,7 +100,7 @@ public class MyAppWidgetProvider extends AppWidgetProvider{
     public void onReceive(Context context, Intent intent) {
     	final String action = intent.getAction();
     	Log.i(MyAppWidgetConstants.TAG, "OnReceive:Action: " + action);
-    	if (MyAppWidgetConstants.ACTION_UPDATE_ALL.equals(action)) {
+    	if (MyAppWidgetConstants.ACTION_UPDATE.equals(action)) {
     		//"更新"广播
     		updateAllAppWidgets(context,AppWidgetManager.getInstance(context),idsSet);
     	}
@@ -114,6 +117,7 @@ public class MyAppWidgetProvider extends AppWidgetProvider{
     		}
     		// 获取 my_appwidget.xml对应的RemoteViews
     		RemoteViews remoteViews = new RemoteViews(context.getPackageName(),R.layout.my_appwidget);
+    		remoteViews.setTextViewText(R.id.tv_head,"普通的AppWidget");
     		remoteViews.setImageViewResource(R.id.iv_show,ARR_IMAGES[index]);  //设置显示图片
     		remoteViews.setOnClickPendingIntent(R.id.btn_show,getPendingIntent(context,MyAppWidgetConstants.Button_Show_Flag));
     		manager.updateAppWidget(appID,remoteViews);

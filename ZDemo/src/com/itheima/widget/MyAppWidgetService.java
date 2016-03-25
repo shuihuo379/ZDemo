@@ -69,7 +69,7 @@ public class MyAppWidgetService extends Service{
 	            while (true) {
 	            	Log.i(MyAppWidgetConstants.TAG, "run ... count:"+count);
 	            	count++;
-	        		Intent updateIntent=new Intent(MyAppWidgetConstants.ACTION_UPDATE_ALL);
+	        		Intent updateIntent=new Intent(MyAppWidgetConstants.ACTION_UPDATE);
 	        		mContext.sendBroadcast(updateIntent);  //发送更新广播
 	                Thread.sleep(MyAppWidgetConstants.UPDATE_TIME);
 	            } 

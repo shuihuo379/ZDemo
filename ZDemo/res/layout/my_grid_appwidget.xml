@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@color/main_green">
+    <RelativeLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginLeft="10dp"
+	    android:layout_marginRight="10dp">
+		<TextView
+	        android:id="@+id/tv_head"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerVertical="true"
+	        android:textSize="13sp"
+	        android:textColor="@android:color/holo_red_light"/>
+	    <Button
+	        android:id="@+id/bt_refresh"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentRight="true"
+	        android:layout_centerVertical="true"
+	        android:textSize="13sp"
+	        android:text="刷新"
+	        android:textColor="@android:color/holo_red_light"/>
+	</RelativeLayout>    
+        
+    <GridView
+        android:id="@+id/gridview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:numColumns="auto_fit"
+        android:verticalSpacing="5dp"
+        android:horizontalSpacing="5dp"
+        android:columnWidth="80dp"
+        android:gravity="center"
+        android:listSelector="@android:color/transparent"
+        android:scrollingCache="true"
+        android:scrollbars="none"/>        
+</LinearLayout>
