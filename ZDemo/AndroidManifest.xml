@@ -193,6 +193,8 @@
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
+        
+        <!-- 圆形的ImageView控件使用案例 -->
         <activity
             android:name="com.itheima.ui.CircleImageViewActivity"
             android:configChanges="locale|layoutDirection"
@@ -200,6 +202,8 @@
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
+        
+        <!-- GridView实现图片动态添加删除显示功能 -->
         <activity
             android:name="com.itheima.ui.AddSinglePicActivity"
             android:configChanges="locale|layoutDirection"
@@ -207,6 +211,8 @@
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
+        
+        <!-- 标签云控件使用案例 -->
         <activity
             android:name="com.itheima.ui.TagCloudActivity"
             android:configChanges="locale|layoutDirection"
@@ -243,12 +249,16 @@
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
+        
+        <!-- Touch事件传递机制测试 -->
         <activity
             android:name="com.itheima.test.TouchEventActivity"
             android:configChanges="locale|layoutDirection"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
+        
+        <!-- RadioGroup+Fragment案例 -->
         <activity
             android:name="com.itheima.ui.RadioFragmentActivity"
             android:configChanges="locale|layoutDirection"
@@ -281,6 +291,14 @@
         
         <activity
             android:name="com.itheima.test.WordFallActivity"
+            android:configChanges="locale|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        
+        <!-- ListView左右滑动实现删除等功能的案例 -->
+        <activity 
+            android:name="com.itheima.ui.SlideListViewActivity"
             android:configChanges="locale|layoutDirection"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" >

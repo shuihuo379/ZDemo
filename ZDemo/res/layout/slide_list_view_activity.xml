@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_orange_light" >
+    <com.itheima.view.SlideListView
+        android:id="@+id/slideListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="@drawable/slide_item_divider"
+        android:listSelector="@android:color/transparent" >
+    </com.itheima.view.SlideListView>
+</RelativeLayout>
