@@ -19,7 +19,7 @@ import com.itheima.demo.R;
 import com.itheima.view.SlideListView;
 
 /**
- * 仿QQ消息列表的效果,可左右滑动的ListView案例,点击按钮删除该条目
+ * 仿QQ消息列表的效果,可左右滑动的ListView案例
  * @author zhangming
  */
 public class SlideListViewActivity extends Activity{
