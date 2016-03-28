@@ -3,7 +3,6 @@ package com.itheima.qq.slideview;
 import java.util.List;
 
 import android.app.Activity;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -63,6 +62,8 @@ public class SlideListViewAdapter extends BaseAdapter{
 		}else{
 			holder = (ViewHolder)convertView.getTag();
 		}
+		holder.deleteHolder.setTag(position);  //为每个条目的删除标签添加一个位置tag标记(每次删除后刷新视图,会重新设置Tag标记的值,其值为相对于传入进来的List集合中的索引位置)
+		
 		MessageItem item = mList.get(position);
         item.slideView = slideView;  //初始化每个条目slideView(LinearLayout)
         item.slideView.shrinkZero();
@@ -72,7 +73,8 @@ public class SlideListViewAdapter extends BaseAdapter{
 			@Override
 			public void onClick(View view) {
 				if (view.getId() == R.id.holder) {
-			        Log.i("test","onClick,view=" + view);
+			        int pos = ((Integer)view.getTag()).intValue();
+			        listener.removeItem(pos);
 			    }
 			}
 		});
@@ -98,6 +100,10 @@ public class SlideListViewAdapter extends BaseAdapter{
 		}
 	}
 	
+	/**
+	 * 自定义回掉接口,移除指定位置的条目
+	 * @author zhangming
+	 */
 	public interface onRemoveItemListener{
 		public void removeItem(int position);
 	}

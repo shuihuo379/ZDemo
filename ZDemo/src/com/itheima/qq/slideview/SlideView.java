@@ -92,8 +92,7 @@ public class SlideView extends LinearLayout {
 	                mScroller.abortAnimation();
 	            }
 	            if (mOnSlideListener != null) {
-	                mOnSlideListener.onSlide(this,
-	                        OnSlideListener.SLIDE_STATUS_START_SCROLL);
+	                mOnSlideListener.onSlide(this,OnSlideListener.SLIDE_STATUS_START_SCROLL);
 	            }
 	            break;
 	        }
