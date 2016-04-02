@@ -296,6 +296,17 @@
             android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
         
+        <activity 
+            android:name="com.itheima.test.TouchOperatorActivity"
+            android:configChanges="locale|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">
+             <intent-filter>
+            	<action android:name="android.intent.action.MAIN" />
+            	<category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
         <!-- ListView左右滑动实现删除等功能的案例 -->
         <activity 
             android:name="com.itheima.ui.SlideListViewActivity"
@@ -308,10 +319,6 @@
             android:configChanges="locale|layoutDirection"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" >
-            <intent-filter>
-            	<action android:name="android.intent.action.MAIN" />
-            	<category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         
         
