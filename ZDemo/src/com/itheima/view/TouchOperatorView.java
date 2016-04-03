@@ -28,9 +28,9 @@ public class TouchOperatorView extends View{
 	
 	public void initPaint(){
 		myPaint = new Paint();
-		myPaint.setColor(Color.RED);
+		myPaint.setColor(Color.BLUE);
 		myPaint.setStyle(Paint.Style.STROKE);
-		myPaint.setStrokeWidth(3);
+		myPaint.setStrokeWidth(1);
 		myPaint.setAntiAlias(true);
 	}
 	
@@ -63,7 +63,7 @@ public class TouchOperatorView extends View{
 		public float posY;
 		public static int DRAW_POINT = 1;
 		public static int DRAW_LINE = 2;
-		public static final int dp = 80;
+		public static final int dp = 50;
 		
 		//画点
 		public static void drawPoint(Canvas canvas,float posX,float posY){

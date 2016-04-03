@@ -20,7 +20,7 @@ public class TouchOperatorActivity extends Activity{
 	private float lastClickX,lastClickY = -1;
 	
 	private static final long DOUBLE_TIME = 1000;  
-	private static final int maxLength = 10;
+	private static final int maxLength = 5;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +28,7 @@ public class TouchOperatorActivity extends Activity{
 		view = new TouchOperatorView(this);
 		view.initAllPoint(maxLength);
 		view.initPaint();
-		view.setBackgroundColor(Color.WHITE);
+		view.setBackgroundColor(Color.rgb(204,232,207));
 		setContentView(view);
 	}
 	
@@ -59,7 +59,7 @@ public class TouchOperatorActivity extends Activity{
 							view.allPoints[i].posX = -1;
 							view.allPoints[i].posY = -1; //重置初始位置
 						}
-						curLength = 0;  //重置视图中点的个数
+						curLength = -1; 
 						view.invalidate();
 					}else{
 						this.lastDown = nowDown;
