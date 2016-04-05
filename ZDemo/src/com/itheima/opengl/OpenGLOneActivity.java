@@ -79,7 +79,8 @@ public class OpenGLOneActivity extends Activity{
 		     //绘制正方形  
 		     gl.glColor4f(0.2f, 0.5f, 0.8f, 0.8f);  //红，绿，蓝，透明度(设置当前色为蓝色,采用单调着色)
 	         gl.glLoadIdentity();  
-	         gl.glTranslatef(1.5f, 0.0f, -8.0f);  
+	         gl.glTranslatef(1.5f, 0.0f,-6.0f);  
+	         gl.glRotatef(90.0f,0.0f,1.0f,0.0f);
 	         gl.glVertexPointer(3, GL10.GL_FLOAT, 0, quateBuffer);  
 	         gl.glDrawArrays(GL10.GL_TRIANGLE_STRIP, 0, 4);  
 //	         gl.glDisableClientState(GL10.GL_VERTEX_ARRAY);   //取消顶点数组
@@ -93,7 +94,7 @@ public class OpenGLOneActivity extends Activity{
 		     
 		     gl.glMatrixMode(GL10.GL_PROJECTION);  
 		     gl.glLoadIdentity();  
-		     gl.glFrustumf(-ratio, ratio, -1, 1, 1, 10);  
+		     gl.glFrustumf(-ratio, ratio, -1, 1, 1, 10); //实现了Surface和坐标系之间的映射关系。它是以透视投影的方式来进行映射的
 		     gl.glMatrixMode(GL10.GL_MODELVIEW);  
 		     gl.glLoadIdentity();  
 		}
