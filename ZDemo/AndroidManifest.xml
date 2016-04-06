@@ -193,6 +193,8 @@
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
+        
+        <!-- 圆形的ImageView控件使用案例 -->
         <activity
             android:name="com.itheima.ui.CircleImageViewActivity"
             android:configChanges="locale|layoutDirection"
@@ -200,6 +202,8 @@
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
+        
+        <!-- GridView实现图片动态添加删除显示功能 -->
         <activity
             android:name="com.itheima.ui.AddSinglePicActivity"
             android:configChanges="locale|layoutDirection"
@@ -207,6 +211,8 @@
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
+        
+        <!-- 标签云控件使用案例 -->
         <activity
             android:name="com.itheima.ui.TagCloudActivity"
             android:configChanges="locale|layoutDirection"
@@ -243,12 +249,16 @@
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
+        
+        <!-- Touch事件传递机制测试 -->
         <activity
             android:name="com.itheima.test.TouchEventActivity"
             android:configChanges="locale|layoutDirection"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
+        
+        <!-- RadioGroup+Fragment案例 -->
         <activity
             android:name="com.itheima.ui.RadioFragmentActivity"
             android:configChanges="locale|layoutDirection"
@@ -284,10 +294,59 @@
             android:configChanges="locale|layoutDirection"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        
+        <activity 
+            android:name="com.itheima.test.TouchOperatorActivity"
+            android:configChanges="locale|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">
             <intent-filter>
-            	<action android:name="android.intent.action.MAIN" />
+           	 	<action android:name="android.intent.action.MAIN" />
             	<category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        
+        <!-- ListView左右滑动实现删除等功能的案例 -->
+        <activity 
+            android:name="com.itheima.ui.SlideListViewActivity"
+            android:configChanges="locale|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity 
+            android:name="com.itheima.qq.slideview.SlideListActivity"
+            android:configChanges="locale|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        
+        <activity 
+            android:name="com.itheima.opengl.OpenGLOneActivity"
+            android:configChanges="locale|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        
+        <activity 
+            android:name="com.itheima.opengl.OpenGLTwoActivity"
+            android:configChanges="locale|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">
+        </activity>
+        
+        <activity 
+            android:name="com.itheima.opengl.OpenGLThreeActivity"
+            android:configChanges="locale|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">
+        </activity>
+        
+        <activity 
+            android:name="com.itheima.ui.ImageMatrixDragAndZoomActivity"
+            android:configChanges="locale|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">
         </activity>
         
         <!-- AlarmManagerActivity在activity，broadcastReceiver,service中执行计时操作 -->
