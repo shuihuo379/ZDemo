@@ -336,12 +336,18 @@
             android:configChanges="locale|layoutDirection"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar">
+        </activity>
+        
+        <activity 
+            android:name="com.itheima.ui.ImageMatrixDragAndZoomActivity"
+            android:configChanges="locale|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">
             <intent-filter>
-            	<action android:name="android.intent.action.MAIN" />
+           	 	<action android:name="android.intent.action.MAIN" />
             	<category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
         
         <!-- AlarmManagerActivity在activity，broadcastReceiver,service中执行计时操作 -->
         <activity 

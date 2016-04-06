@@ -138,24 +138,17 @@ public class OpenGLThreeActivity extends Activity{
 	    
 		@Override
 		public void onSurfaceCreated(GL10 gl, EGLConfig config) {
-			// 启用阴影平滑
-			gl.glShadeModel(GL10.GL_SMOOTH);
-						
-			// 设置背景颜色
-			gl.glClearColor(0.2f, 0.4f, 0.5f, 1.0f);
-						
-			// 设置深度缓存
-			gl.glClearDepthf(1.0f);
-						
-			// 启用深度测试(启用了深度测试，那么这就不适用于同时绘制不透明物体)
-			gl.glEnable(GL10.GL_DEPTH_TEST);
-			
-			gl.glDepthFunc(GL10.GL_LEQUAL);
-			
-			// 禁止抖动以取得更好的性能
-	        gl.glDisable(GL10.GL_DITHER);
-			
-	        //启用2D纹理贴图  
+			//启用深度测试  
+	        gl.glEnable(GL10.GL_DEPTH_TEST);  
+	        //所做深度测试的类型   
+	        gl.glDepthFunc(GL10.GL_DITHER);  
+	        //黑色背景  
+	        gl.glClearColor(0f, 0f, 0f, 0.5f);  
+	        //启用阴影平滑  
+	        gl.glShadeModel(GL10.GL_SMOOTH);  
+	        //清除深度缓存      
+	        gl.glClearDepthf(1.0f);  
+	        //启用2D纹理 
 	        gl.glEnable(GL10.GL_TEXTURE_2D);  
 	        //告诉系统对透视进行修正  
 	        gl.glHint(GL10.GL_PERSPECTIVE_CORRECTION_HINT, GL10.GL_FASTEST);  
@@ -166,13 +159,15 @@ public class OpenGLThreeActivity extends Activity{
 			 gl.glViewport(0, 0, width, height);  
 		     gl.glMatrixMode(GL10.GL_PROJECTION);  
 		     gl.glLoadIdentity();  
-		     GLU.gluPerspective(gl, 45.0f, (float)width/(float)height, 0.1f, 100.0f);  //设置视图区域的大小
+		     GLU.gluPerspective(gl, 45.0f, (float)width/(float)height, 0.1f, 50.0f);  //设置视图区域的大小
 		     gl.glMatrixMode(GL10.GL_MODELVIEW);  
 		     gl.glLoadIdentity();  
 		}
 
 		@Override
 		public void onDrawFrame(GL10 gl) {
+			// 设置背景颜色
+			gl.glClearColor(0f, 0f, 0f, 0.5f);  
 			// 清除屏幕和深度缓存
 			gl.glClear(GL10.GL_COLOR_BUFFER_BIT | GL10.GL_DEPTH_BUFFER_BIT);
 	        gl.glMatrixMode(GL10.GL_MODELVIEW);  //设置矩阵模式  
@@ -192,9 +187,9 @@ public class OpenGLThreeActivity extends Activity{
 	         
 	        gl.glLoadIdentity();  
 	        gl.glTranslatef(0, 0, -5);  
-	        gl.glScalef(0.8f, 0.8f, 0.8f); // 缩小80%
 	        gl.glRotatef(45f, 0f, 1f, 0f); //往右边(y轴)倾斜45度  
-	        gl.glRotatef(this.rx,1f, 0f, 0f); //往上面倾斜(x轴)倾斜,根据每次得到的角度  
+	        gl.glScalef(0.8f, 0.8f, 0.8f);	// 缩小50%
+	        //gl.glRotatef(this.rx,1f, 0f, 0f); //往上面倾斜(x轴)倾斜,根据每次得到的角度  
 	        gl.glDrawArrays(GL10.GL_TRIANGLES, 0,vertices.length);  
 	         
 	        gl.glDisableClientState(GL10.GL_VERTEX_ARRAY);  
@@ -202,7 +197,7 @@ public class OpenGLThreeActivity extends Activity{
 	        gl.glDisableClientState(GL10.GL_TEXTURE_COORD_ARRAY);  
 	        gl.glDisable(GL10.GL_CULL_FACE);  
 	        
-	        this.rx--;  //旋转角度减1  
+	        //this.rx--;  //旋转角度减1  
 		}
 	}
 }

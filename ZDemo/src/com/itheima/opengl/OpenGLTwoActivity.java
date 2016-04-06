@@ -90,7 +90,7 @@ public class OpenGLTwoActivity extends Activity{
 			gl.glDisable(GL10.GL_DITHER);
 			
 			//设置纹理
-			cube.loadTexture(gl, context);		// 加载纹理
+			cube.loadTexture(gl, context);		// 加载一种纹理
 			gl.glEnable(GL10.GL_TEXTURE_2D);	// 启用2D纹理贴图  
 		}
 
