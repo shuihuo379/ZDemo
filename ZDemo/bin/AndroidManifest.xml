@@ -345,9 +345,9 @@
             android:theme="@android:style/Theme.NoTitleBar">
         </activity>
         
-        <!-- 富文本编辑器测试 -->
+        <!-- 按字母顺序排序的ListView -->
         <activity 
-            android:name="com.itheima.test.RichEditorTestActivity"
+            android:name="com.itheima.sortlistview.SortListViewActivity"
             android:configChanges="locale|layoutDirection"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar">
@@ -355,6 +355,14 @@
            	 	<action android:name="android.intent.action.MAIN" />
             	<category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        
+        <!-- 富文本编辑器测试 -->
+        <activity 
+            android:name="com.itheima.test.RichEditorTestActivity"
+            android:configChanges="locale|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">
         </activity>
         
         <!-- AlarmManagerActivity在activity，broadcastReceiver,service中执行计时操作 -->

@@ -19,7 +19,7 @@ public class TouchEventFather extends LinearLayout{
 
 	@Override
 	public boolean dispatchTouchEvent(MotionEvent ev) {
-		Log.e("test", "TouchEventFather | dispatchTouchEvent --> " + TouchEventUtil.getTouchAction(ev.getAction()));
+		Log.i("test", "TouchEventFather | dispatchTouchEvent --> " + TouchEventUtil.getTouchAction(ev.getAction()));
 		/**
 		 * (1)若返回false,表示对获取到的事件停止向下传递，同时也不对该事件进行消费; 
 		 * (2)若返回true，表示分发事件到 TouchEventFather 控件并由该控件的 dispatchTouchEvent 进行消费;
@@ -33,12 +33,12 @@ public class TouchEventFather extends LinearLayout{
 	/**
 	 * 默认返回false,若是此种状态,如果是点击本类的view,则调用本类onTouchEvent方法;
 	 * 如果点击子类的view，则事件向下分发到子view的dispatchTouchEvent方法
-	 * 若返回true,表示此事件在此视图中拦截,事件不会走到本类的OnTouchEvent方法,会向上传递给Activity类中
+	 * 若返回true,表示此事件在此视图中拦截,事件会走到本类的OnTouchEvent方法
 	 */
 	@Override
 	public boolean onInterceptTouchEvent(MotionEvent ev) {
 		Log.i("test", "TouchEventFather | onInterceptTouchEvent --> " + TouchEventUtil.getTouchAction(ev.getAction()));
-		return super.onTouchEvent(ev);
+		return super.onInterceptTouchEvent(ev);
 	}
 
 	/**
@@ -50,7 +50,7 @@ public class TouchEventFather extends LinearLayout{
 	 */
 	@Override
 	public boolean onTouchEvent(MotionEvent ev) {
-		Log.d("test","TouchEventFather | onTouchEvent --> " + TouchEventUtil.getTouchAction(ev.getAction()));
+		Log.i("test","TouchEventFather | onTouchEvent --> " + TouchEventUtil.getTouchAction(ev.getAction()));
 		return super.onTouchEvent(ev);
 	}
 }
