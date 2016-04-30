@@ -367,10 +367,6 @@
             android:configChanges="locale|layoutDirection"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar">
-            <intent-filter>
-           	 	<action android:name="android.intent.action.MAIN" />
-            	<category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         
         <!-- IPC Messenger通信方式 -->
@@ -390,6 +386,10 @@
             android:configChanges="locale|layoutDirection"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+           	 	<action android:name="android.intent.action.MAIN" />
+            	<category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <service 
             android:name="com.itheima.aidl.BookManagerService" 

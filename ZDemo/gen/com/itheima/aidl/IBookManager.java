@@ -64,6 +64,24 @@ this.addBook(_arg0);
 reply.writeNoException();
 return true;
 }
+case TRANSACTION_registerListener:
+{
+data.enforceInterface(DESCRIPTOR);
+com.itheima.aidl.IOnNewBookArrivedListener _arg0;
+_arg0 = com.itheima.aidl.IOnNewBookArrivedListener.Stub.asInterface(data.readStrongBinder());
+this.registerListener(_arg0);
+reply.writeNoException();
+return true;
+}
+case TRANSACTION_unregisterListener:
+{
+data.enforceInterface(DESCRIPTOR);
+com.itheima.aidl.IOnNewBookArrivedListener _arg0;
+_arg0 = com.itheima.aidl.IOnNewBookArrivedListener.Stub.asInterface(data.readStrongBinder());
+this.unregisterListener(_arg0);
+reply.writeNoException();
+return true;
+}
 }
 return super.onTransact(code, data, reply, flags);
 }
@@ -120,10 +138,52 @@ _reply.recycle();
 _data.recycle();
 }
 }
+//在AIDL文件中使用实现了Parcelable接口的对象,此处参数为Book实例
+
+@Override public void registerListener(com.itheima.aidl.IOnNewBookArrivedListener listener) throws android.os.RemoteException
+{
+android.os.Parcel _data = android.os.Parcel.obtain();
+android.os.Parcel _reply = android.os.Parcel.obtain();
+try {
+_data.writeInterfaceToken(DESCRIPTOR);
+_data.writeStrongBinder((((listener!=null))?(listener.asBinder()):(null)));
+mRemote.transact(Stub.TRANSACTION_registerListener, _data, _reply, 0);
+_reply.readException();
+}
+finally {
+_reply.recycle();
+_data.recycle();
+}
+}
+//在AIDL文件中使用其它AIDL接口,此处引入IOnNewBookArrivedListener接口
+
+@Override public void unregisterListener(com.itheima.aidl.IOnNewBookArrivedListener listener) throws android.os.RemoteException
+{
+android.os.Parcel _data = android.os.Parcel.obtain();
+android.os.Parcel _reply = android.os.Parcel.obtain();
+try {
+_data.writeInterfaceToken(DESCRIPTOR);
+_data.writeStrongBinder((((listener!=null))?(listener.asBinder()):(null)));
+mRemote.transact(Stub.TRANSACTION_unregisterListener, _data, _reply, 0);
+_reply.readException();
+}
+finally {
+_reply.recycle();
+_data.recycle();
+}
+}
 }
 static final int TRANSACTION_getBookList = (android.os.IBinder.FIRST_CALL_TRANSACTION + 0);
 static final int TRANSACTION_addBook = (android.os.IBinder.FIRST_CALL_TRANSACTION + 1);
+static final int TRANSACTION_registerListener = (android.os.IBinder.FIRST_CALL_TRANSACTION + 2);
+static final int TRANSACTION_unregisterListener = (android.os.IBinder.FIRST_CALL_TRANSACTION + 3);
 }
 public java.util.List<com.itheima.aidl.Book> getBookList() throws android.os.RemoteException;
 public void addBook(com.itheima.aidl.Book book) throws android.os.RemoteException;
+//在AIDL文件中使用实现了Parcelable接口的对象,此处参数为Book实例
+
+public void registerListener(com.itheima.aidl.IOnNewBookArrivedListener listener) throws android.os.RemoteException;
+//在AIDL文件中使用其它AIDL接口,此处引入IOnNewBookArrivedListener接口
+
+public void unregisterListener(com.itheima.aidl.IOnNewBookArrivedListener listener) throws android.os.RemoteException;
 }

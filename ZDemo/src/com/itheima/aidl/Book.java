@@ -5,7 +5,7 @@ import android.os.Parcelable;
 import android.util.Log;
 
 /**
- * model
+ * model Book类实现Parcelable接口
  * @author zhangming
  */
 public class Book implements Parcelable{
