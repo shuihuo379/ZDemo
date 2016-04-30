@@ -301,10 +301,6 @@
             android:configChanges="locale|layoutDirection"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar">
-            <intent-filter>
-           	 	<action android:name="android.intent.action.MAIN" />
-            	<category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         
         <!-- ListView左右滑动实现删除等功能的案例 -->
@@ -348,6 +344,57 @@
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar">
         </activity>
+        
+        <!-- 按字母顺序排序的ListView -->
+        <activity 
+            android:name="com.itheima.sortlistview.SortListViewActivity"
+            android:configChanges="locale|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">
+        </activity>
+        
+        <!-- 富文本编辑器测试 -->
+        <activity 
+            android:name="com.itheima.test.RichEditorTestActivity"
+            android:configChanges="locale|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">
+        </activity>
+        
+        <!-- 图片轮播 -->
+        <activity 
+            android:name="com.itheima.test.PictureCarouselActivity"
+            android:configChanges="locale|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+           	 	<action android:name="android.intent.action.MAIN" />
+            	<category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <!-- IPC Messenger通信方式 -->
+        <activity 
+        	android:name="com.itheima.test.MessengerIPCDemoActivity"
+        	android:configChanges="locale|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">
+        </activity>
+        <service 
+            android:name="com.itheima.service.MessengerService" 
+            android:process=":remote"/>
+        
+        <!-- IPC AIDL通信方式 -->
+        <activity 
+            android:name="com.itheima.aidl.BookManagerActivity"
+            android:configChanges="locale|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">
+        </activity>
+        <service 
+            android:name="com.itheima.aidl.BookManagerService" 
+            android:process=":remote"/>
+        
         
         <!-- AlarmManagerActivity在activity，broadcastReceiver,service中执行计时操作 -->
         <activity 

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/main_gray" >
+    
+    <com.itheima.sortlistview.ClearEditTextView
+        android:id="@+id/filter_edit"
+        android:layout_marginTop="@dimen/dp5"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/search_bar_edit_selector"
+        android:drawableLeft="@drawable/search_bar_icon_normal"
+        android:hint="请输入关键字"
+        android:singleLine="true"
+        android:textSize="@dimen/sp18" 
+        android:paddingTop="@dimen/dp5"
+        android:paddingBottom="@dimen/dp5"/> 
+        
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <ListView
+            android:id="@+id/country_lvcountry"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:divider="@null" />
+
+        <TextView
+            android:id="@+id/dialog"
+            android:layout_width="@dimen/dp80"
+            android:layout_height="@dimen/dp80"
+            android:layout_gravity="center"
+            android:background="@drawable/show_head_toast_bg"
+            android:gravity="center"
+            android:textColor="#ffffffff"
+            android:textSize="@dimen/dp30"
+            android:visibility="invisible" />
+        
+        <com.itheima.sortlistview.SideBarView
+            android:id="@+id/sideBar"
+            android:layout_width="@dimen/dp30"
+            android:layout_height="fill_parent"
+            android:layout_gravity="right|center"/>
+   </FrameLayout>
+</LinearLayout>
