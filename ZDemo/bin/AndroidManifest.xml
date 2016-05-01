@@ -386,14 +386,29 @@
             android:configChanges="locale|layoutDirection"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar">
+        </activity>
+        <service 
+            android:name="com.itheima.aidl.BookManagerService" 
+            android:process=":remote"/>
+        
+        <!-- IPC ContentProvider通信方式 -->
+        <activity 
+            android:name="com.itheima.content.provider.ProviderActivity"
+            android:configChanges="locale|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">
             <intent-filter>
            	 	<action android:name="android.intent.action.MAIN" />
             	<category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service 
-            android:name="com.itheima.aidl.BookManagerService" 
-            android:process=":remote"/>
+        <!-- 注册自己定义的provider -->
+        <provider 
+            android:name="com.itheima.content.provider.BookProvider"
+            android:authorities="com.itheima.content.provider"
+            android:permission="com.itheima.PROVIDER"
+            android:process=":provider">
+        </provider>
         
         
         <!-- AlarmManagerActivity在activity，broadcastReceiver,service中执行计时操作 -->
