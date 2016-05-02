@@ -62,7 +62,7 @@ public class PictureCarouselActivity extends Activity{
 			            runOnUiThread(new Runnable() {
 							@Override
 							public void run() {
-								mviewPager.setCurrentItem(currentItem);
+								mviewPager.setCurrentItem(currentItem,false);
 							}
 						});
 					}
@@ -136,9 +136,9 @@ public class PictureCarouselActivity extends Activity{
 			switch (status) {
 			case 0: // 滑动结束,即切换完毕或者加载完毕
 				if(mviewPager.getCurrentItem() == mviewPager.getAdapter().getCount()-1 && !isAutoPlay){
-				   mviewPager.setCurrentItem(0);
+				   mviewPager.setCurrentItem(0,false); //解决界面切换时,图片滑动存在现象,将平滑属性设置为false状态即可
 				}else if(mviewPager.getCurrentItem() == 0 && !isAutoPlay){
-				   mviewPager.setCurrentItem(mviewPager.getAdapter().getCount() - 1);
+				   mviewPager.setCurrentItem(mviewPager.getAdapter().getCount() - 1,false);
 				}
 				currentItem = mviewPager.getCurrentItem();
 				isPlay = true;

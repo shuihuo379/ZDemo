@@ -397,10 +397,6 @@
             android:configChanges="locale|layoutDirection"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar">
-            <intent-filter>
-           	 	<action android:name="android.intent.action.MAIN" />
-            	<category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <!-- 注册自己定义的provider -->
         <provider 
@@ -409,6 +405,18 @@
             android:permission="com.itheima.PROVIDER"
             android:process=":provider">
         </provider>
+        
+        <!-- view的滑动事件测试类 -->
+        <activity 
+            android:name="com.itheima.test.ViewIncidentActivity"
+            android:configChanges="locale|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">
+             <intent-filter>
+           	 	<action android:name="android.intent.action.MAIN" />
+            	<category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         
         
         <!-- AlarmManagerActivity在activity，broadcastReceiver,service中执行计时操作 -->
