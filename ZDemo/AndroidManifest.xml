@@ -412,7 +412,16 @@
             android:configChanges="locale|layoutDirection"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar">
-             <intent-filter>
+            
+        </activity>
+        
+        <!-- view的滑动冲突测试类 -->
+        <activity 
+            android:name="com.itheima.test.SlideConflictDemoActivity"
+            android:configChanges="locale|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
            	 	<action android:name="android.intent.action.MAIN" />
             	<category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
