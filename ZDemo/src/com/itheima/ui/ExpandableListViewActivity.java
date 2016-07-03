@@ -112,7 +112,7 @@ public class ExpandableListViewActivity extends Activity{
 	        
 	        ImageView iv = (ImageView)view.findViewById(R.id.groupIcon);
 			if (isExpanded) {
-				iv.setImageResource(R.drawable.down_arrow);
+				iv.setImageResource(R.drawable.pull_refresh_arrow);
 			}
 			else{
 				iv.setImageResource(R.drawable.right_arrow);

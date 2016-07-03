@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/main_gray">
+    <TextView
+        android:id="@+id/no_plugin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:autoLink="web"
+        android:textSize="18sp"
+        android:text="@string/no_plugin"
+        android:visibility="gone" />
+    <ListView
+        android:id="@+id/plugin_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="@color/light_black"
+        android:dividerHeight="1.0px"
+        android:scrollbars="none" />
+</LinearLayout>

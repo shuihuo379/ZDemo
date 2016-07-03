@@ -363,7 +363,7 @@
         
         <!-- 图片轮播 -->
         <activity 
-            android:name="com.itheima.test.PictureCarouselActivity"
+            android:name="com.itheima.ui.PictureCarouselActivity"
             android:configChanges="locale|layoutDirection"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar">
@@ -412,7 +412,6 @@
             android:configChanges="locale|layoutDirection"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar">
-            
         </activity>
         
         <!-- view的滑动冲突测试类 -->
@@ -421,12 +420,168 @@
             android:configChanges="locale|layoutDirection"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar">
+        </activity>
+        
+        <!-- WebView加载网页测试类 -->
+        <activity 
+            android:name="com.itheima.test.WebViewActivity"
+            android:configChanges="locale|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">
             <intent-filter>
-           	 	<action android:name="android.intent.action.MAIN" />
+            	<action android:name="android.intent.action.MAIN" />
             	<category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         
+        <!-- 使用Volley异步加载图片的ListView效果 -->
+        <activity 
+            android:name="com.itheima.ui.AsyncVolleyListViewActivity"
+            android:configChanges="locale|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">
+        </activity>
+        
+        <!-- OKHTTP测试 -->
+        <activity  
+            android:name="com.itheima.test.OKHttpActivity"
+            android:configChanges="locale|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">
+        </activity>
+        
+        <!-- 组合控件的使用,自定义TopBar控件 -->
+        <activity 
+            android:name="com.itheima.test.MyTopBarDemoActivity"
+            android:configChanges="locale|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">
+        </activity>
+        
+        <!-- 滑动案例测试部分 -->
+        <activity 
+            android:name="com.itheima.slide.test.SlideOneTestActivity"
+            android:configChanges="locale|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">
+        </activity>
+        
+        <!-- 使用ViewDragHelper类来实现侧滑显示菜单效果 -->
+        <activity 
+            android:name="com.itheima.test.DragViewGroupActivity"
+            android:configChanges="locale|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">
+        </activity>
+        
+        <activity 
+            android:name="com.itheima.test.PanelViewActivity"
+            android:configChanges="locale|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">
+        </activity>
+        
+        <!-- 属性动画案例Demo -->
+        <activity 
+            android:name="com.itheima.property.animator.CategoryListActivity"
+            android:configChanges="locale|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">
+        </activity>
+        <activity 
+            android:name="com.itheima.property.animator.ObjectAnimActivity"
+            android:configChanges="locale|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">
+        </activity>
+        <activity 
+            android:name="com.itheima.property.animator.ValueAnimatorActivity"
+            android:configChanges="locale|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">
+        </activity>
+        <activity 
+            android:name="com.itheima.property.animator.AnimatorSetActivity"
+            android:configChanges="locale|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">
+        </activity>
+        <activity 
+            android:name="com.itheima.property.animator.XmlForAnimActivity"
+            android:configChanges="locale|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">
+        </activity>
+        <activity 
+            android:name="com.itheima.property.animator.ViewLayoutAnimActivity"
+            android:configChanges="locale|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">
+        </activity>
+        
+        
+        <!-- 动态加载APK示例-->
+        <activity 
+            android:name="com.itheima.ui.DynamicLoadApkActivity"
+            android:configChanges="locale|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">
+<!--             <intent-filter> -->
+<!--             	<action android:name="android.intent.action.MAIN" /> -->
+<!--             	<category android:name="android.intent.category.LAUNCHER" /> -->
+<!--             </intent-filter> -->
+        </activity>
+        <activity
+            android:name="com.ryg.dynamicload.DLProxyActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="com.ryg.dynamicload.proxy.activity.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.ryg.dynamicload.DLProxyFragmentActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="com.ryg.dynamicload.proxy.fragmentactivity.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <service android:name="com.ryg.dynamicload.DLProxyService" />
+        
+       
+        <!-- 使用ViewFlipper类实现页面水平滑动切换的效果(对比与ViewPager) -->
+        <activity 
+            android:name="com.itheima.ui.ViewFlipperActivity"
+            android:configChanges="locale|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">
+        </activity>
+        
+       
+        <!-- 黑马案例:仿ViewPager图片滑动,其中包括Touch事件处理 -->
+        <activity 
+            android:name="com.itheima.ui.HeimaPicViewPagerActivity"
+            android:configChanges="locale|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">
+        </activity>
+        
+        
+        <!-- 黑马案例:自定义瀑布流效果,旨在研究Touch事件分发机制 -->
+        <activity 
+            android:name="com.itheima.ui.HeimaPinterestListViewActivity"
+            android:configChanges="locale|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">
+        </activity>
+        
+        <activity 
+            android:name="com.itheima.test.HuanXinMenuActivity"
+            android:configChanges="locale|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">
+        </activity>
         
         <!-- AlarmManagerActivity在activity，broadcastReceiver,service中执行计时操作 -->
         <activity 

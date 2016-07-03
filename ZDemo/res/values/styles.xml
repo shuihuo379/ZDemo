@@ -1,7 +1,8 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
      <!-- Application theme. -->
 	<style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+        <item name="android:windowBackground">@color/main_gray</item>
     </style>
 
     <style name="UserSetActivityTheme" parent="AppBaseTheme">

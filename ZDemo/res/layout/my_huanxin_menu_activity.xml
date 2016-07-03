@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:itheima="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <com.itheima.view.MyHuanXinMenu
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        itheima:huanxinBackgroundColor="@color/btn_yellow_color"
+        itheima:orderNum="1" />
+
+    <com.itheima.view.MyHuanXinMenu
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        itheima:huanxinBackgroundColor="@color/main_green"
+        itheima:orderNum="2" />
+
+    <com.itheima.view.MyHuanXinMenu
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        itheima:huanxinBackgroundColor="#5FB1ED"
+        itheima:orderNum="3" />
+
+</RelativeLayout>

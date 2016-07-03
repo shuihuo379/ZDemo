@@ -25,4 +25,45 @@
         <attr name="y" format="integer"/>
     </declare-styleable>
     
+    <!-- 自定义TopBar控件的属性 -->
+    <declare-styleable name="MyTopBar">
+        <attr name="left_src" format="reference"/>
+        <attr name="title_text" format="string"/>
+        <attr name="title_text_size" format="dimension"/>
+        <attr name="title_text_color" format="color"/>
+        <attr name="right_src" format="reference"/>
+    </declare-styleable>
+    
+    
+    <!-- 圆角矩形,圆形图片效果实现属性 -->
+    <attr name="borderRadius" format="dimension" />
+    <attr name="type">
+        <enum name="circle" value="0" />
+        <enum name="round" value="1" />
+    </attr>
+    <declare-styleable name="RoundImageViewByXfermode">
+        <attr name="borderRadius" />
+        <attr name="type" />
+    </declare-styleable>
+    <declare-styleable name="RoundImageView">
+        <attr name="borderRadius" />
+        <attr name="type" />
+    </declare-styleable>
+    
+    <!-- 自定义表盘的属性 -->
+    <declare-styleable name="PanelView">
+        <attr name="arcColor" format="color"/>
+        <attr name="arcWidth" format="dimension"/>
+        <attr name="android:text"/>  
+        <attr name="tikeCount" format="integer"/>  
+        <attr name="pointerColor" format="color"/>  
+        <attr name="android:textSize"/>  
+    </declare-styleable>
+    
+    <!-- 自定义环形菜单 -->
+    <declare-styleable name="HuanxinMenuView">
+        <attr name="huanxinBackgroundColor" format="color"/>
+        <attr name="orderNum" format="integer"/>
+    </declare-styleable>
+    
 </resources>

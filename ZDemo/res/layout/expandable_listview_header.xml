@@ -11,7 +11,7 @@
         android:layout_height="25dp"
         android:layout_marginLeft="10dp"
         android:contentDescription="@null"
-        android:src="@drawable/down_arrow" 
+        android:src="@drawable/pull_refresh_arrow" 
         android:scaleType="centerInside"/>
 	 <TextView
         android:id="@+id/groupto"
