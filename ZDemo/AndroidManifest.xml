@@ -343,11 +343,24 @@
             android:theme="@android:style/Theme.NoTitleBar">
         </activity>
         
+        <!-- ImageView控件缩放拖动效果  -->
         <activity 
             android:name="com.itheima.ui.ImageMatrixDragAndZoomActivity"
             android:configChanges="locale|layoutDirection"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar">
+        </activity>
+        
+        <!-- SurfaceView控件缩放拖动效果  -->
+        <activity 
+            android:name="com.itheima.ui.SurfaceDragAndZoomActivity"
+            android:configChanges="locale|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+            	<action android:name="android.intent.action.MAIN" />
+            	<category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         
         <!-- 按字母顺序排序的ListView -->
@@ -441,10 +454,6 @@
             android:configChanges="locale|layoutDirection"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar">
-             <intent-filter>
-            	<action android:name="android.intent.action.MAIN" />
-            	<category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         
         <!-- OKHTTP测试 -->
