@@ -13,4 +13,12 @@
     <string name="hello_world">Hello world!</string>
     <string name="no_plugin">没有发现插件apk，请将插件放在 /sdcard/DynamicLoadHost目录下\n了解更多：https://github.com/singwhatiwanna/dynamic-load-apk</string>
     <string name="introducation">DL : Apk动态加载框架\n了解更多：https://github.com/singwhatiwanna/dynamic-load-apk</string>
+
+	<string name="app_name">H264Android</string>
+    <string name="playCIF">播放CIF</string> 
+    <string name="playQCIF">播放QCIF</string>  
+    <string name="stop">停止</string> 
+    <string name="ret">返回</string>
+    <string name="exit">退出</string>
+  	<string name="logout">注销</string>  
 </resources>
