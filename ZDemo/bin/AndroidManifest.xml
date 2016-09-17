@@ -395,20 +395,12 @@
             android:configChanges="locale|layoutDirection"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar">
-<!--             <intent-filter> -->
-<!--             	<action android:name="android.intent.action.MAIN" /> -->
-<!--             	<category android:name="android.intent.category.LAUNCHER" /> -->
-<!--             </intent-filter> -->
         </activity>
         
         <!-- H264视频解码案例  -->
         <activity 
             android:name="h264.com.H264DecodeActivity"
             android:screenOrientation="landscape">
-            <intent-filter>
-            	<action android:name="android.intent.action.MAIN" />
-            	<category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         
         <!-- IPC Messenger通信方式 -->
@@ -632,6 +624,24 @@
             android:name="com.itheima.ui.DeviceListActivity"
             android:configChanges="locale|layoutDirection"
             android:screenOrientation="portrait">
+        </activity>
+        
+        <!-- AVC编解码演示案例入口界面  -->
+        <activity 
+            android:name="yzriver.avc.avccodec.MainGalleryActivity"
+            android:configChanges="locale|layoutDirection"
+            android:screenOrientation="portrait">
+            <intent-filter>
+            	<action android:name="android.intent.action.MAIN" />
+            	<category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <!-- AVC编码视频录制功能 -->
+        <activity 
+            android:name="yzriver.avc.avccodec.AvcRecActivity"
+            android:configChanges="locale|layoutDirection"
+            android:screenOrientation="landscape">
         </activity>
         
         <!-- AlarmManagerActivity在activity，broadcastReceiver,service中执行计时操作 -->
