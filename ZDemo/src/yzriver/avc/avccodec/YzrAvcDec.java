@@ -5,6 +5,7 @@ import android.util.Log;
 /**
  * 调用C++解码库的接口
  * @author zhangming
+ * @date 2016/09/18
  */
 public class YzrAvcDec {
 	private int yzrAvcDecHandle;

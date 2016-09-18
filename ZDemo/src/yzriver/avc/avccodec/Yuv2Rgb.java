@@ -1,8 +1,9 @@
 package yzriver.avc.avccodec;
 
 /**
- * 调用C++接口
+ * 调用C++接口,负责将YUV数据转成RGB数据,只有RGB数据才好显示
  * @author zhangming
+ * @date 2016/09/18
  */
 public class Yuv2Rgb {
 	static public final int YUVFORMAT_YUV420P = 1 ;

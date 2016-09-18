@@ -12,6 +12,7 @@ import android.widget.Button;
 /**
  * AVC编解码演示案例入口界面
  * @author zhangming
+ * @date 2016/09/18
  */
 public class MainGalleryActivity extends Activity implements OnClickListener{
 
@@ -23,6 +24,7 @@ public class MainGalleryActivity extends Activity implements OnClickListener{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		InitUtil.PrepareRawData(this);
 		setContentView(R.layout.main_gallery_codec_activity);
 		
 		Button btn_avc_rec = (Button) findViewById(R.id.btn_avc_rec);

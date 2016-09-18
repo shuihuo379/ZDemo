@@ -14,6 +14,7 @@ import android.widget.TextView;
 /**
  * AVC编解码工具类
  * @author zhangming
+ * @date 2016/09/18
  */
 public class AvcThread {
 	static public final int MSG_ENCODER_FINISH = 1;
@@ -528,7 +529,7 @@ public class AvcThread {
 					File avcFile = new File(avcf);
 					fo = new FileOutputStream(avcFile);
 				} catch (IOException e) {
-					Log.e(TAG,e.getMessage());
+					Log.e(TAG,"e1: "+e.getMessage());
 					return;
 				}
 				long timeStart = System.currentTimeMillis();
@@ -556,7 +557,7 @@ public class AvcThread {
 						}
 
 					} catch (IOException e) {
-
+						Log.e(TAG,"e2: "+e.getMessage());
 					}
 					if (frames % 20 == 0) {
 						long timeCurrent = System.currentTimeMillis();
@@ -585,7 +586,7 @@ public class AvcThread {
 					fo.write(fr);
 					fo.close();
 				} catch (IOException e) {
-
+					Log.e(TAG,"e3: "+e.getMessage());
 				}
 				wl.release();
 				cameraView.stopRec();

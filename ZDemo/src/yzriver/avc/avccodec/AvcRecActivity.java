@@ -1,7 +1,6 @@
 package yzriver.avc.avccodec;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.Calendar;
 
 import android.app.Activity;
@@ -10,7 +9,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.os.PowerManager;
-import android.os.PowerManager.WakeLock;
 import android.view.SurfaceHolder;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -23,6 +21,7 @@ import com.itheima.util.CommonUtil;
 /**
  * AVC编码视频录制功能
  * @author zhangming
+ * @date 2016/09/18
  */
 public class AvcRecActivity extends Activity implements OnClickListener{
 	private VideoCameraView avcRecVideoCameraView;
@@ -48,6 +47,7 @@ public class AvcRecActivity extends Activity implements OnClickListener{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		InitUtil.PrepareRawData(this);
 		setContentView(R.layout.avc_rec_activity);
 		
 		PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
@@ -105,11 +105,8 @@ public class AvcRecActivity extends Activity implements OnClickListener{
 		    	else
 		    		mm += (mon) ;		    	
 		    	
-		    	sddir = CommonUtil.getNormalSDPath()+File.separator+"ZDemo";
-		    	File dirFile = new File(sddir);
-		    	if(!dirFile.exists()){
-					dirFile.mkdir();
-		    	}
+		    	//经过InitUtil.PrepareRawData(this); 此时目录sddir已经是存在的
+		    	sddir = CommonUtil.getNormalSDPath()+File.separator+"ZDemo"; 
 		    	String avc = sddir+File.separator+cal.get(Calendar.YEAR)+mm+".avc" ;
     			
 		    	avcThread.setFrameRateTextView(avcRecFrameTextView) ;

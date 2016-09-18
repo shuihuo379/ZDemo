@@ -10,6 +10,11 @@ import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
+/**
+ * 自定义摄像头视图View
+ * @author zhangming
+ * @date 2016/09/18
+ */
 public class VideoCameraView extends SurfaceView 
 	implements SurfaceHolder.Callback,android.hardware.Camera.PreviewCallback{
 	
