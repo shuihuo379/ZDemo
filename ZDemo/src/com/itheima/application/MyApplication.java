@@ -1,9 +1,10 @@
 package com.itheima.application;
 
-import com.baidu.mapapi.SDKInitializer;
-
-import cn.jpush.android.api.JPushInterface;
 import android.app.Application;
+import cn.jpush.android.api.JPushInterface;
+
+import com.baidu.mapapi.SDKInitializer;
+import com.itheima.reboot.app.CrashHandler;
 
 /**
  * Application类,提供全局上下文对象
@@ -20,6 +21,9 @@ public class MyApplication extends Application{
         JPushInterface.setDebugMode(true);
         JPushInterface.init(this);
         SDKInitializer.initialize(getApplicationContext());
+        
+        CrashHandler handler = CrashHandler.getInstance();
+		handler.init(this);
 	}
 	
 	/**

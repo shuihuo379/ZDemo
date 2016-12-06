@@ -631,10 +631,6 @@
             android:name="yzriver.avc.avccodec.MainGalleryActivity"
             android:configChanges="locale|layoutDirection"
             android:screenOrientation="portrait">
-            <intent-filter>
-            	<action android:name="android.intent.action.MAIN" />
-            	<category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         
         <!-- AVC编码视频录制功能 -->
@@ -643,6 +639,24 @@
             android:configChanges="locale|layoutDirection"
             android:screenOrientation="landscape">
         </activity>
+        
+        <!-- 模拟App Crash后重启一次的效果 -->
+        <activity 
+            android:name="com.itheima.reboot.app.WelcomeActivity"
+            android:configChanges="locale|layoutDirection"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity 
+            android:name="com.itheima.reboot.app.RebootAppActivity"
+            android:configChanges="locale|layoutDirection"
+            android:screenOrientation="portrait">
+        </activity>
+        <service android:name="com.itheima.reboot.app.MyService" />
+        
         
         <!-- AlarmManagerActivity在activity，broadcastReceiver,service中执行计时操作 -->
         <activity 

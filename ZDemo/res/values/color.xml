@@ -27,6 +27,7 @@
     <color name="btn_login_color">#ff2fbce7</color>
     <color name="course_search_color">#ffe0e0e0</color>
     <color name="course_search_bottom_line_color">#ff65c2ff</color>
+    <color name="reveal_color">#1b000000</color>
 
     <!-- 小按钮系列,用于shape -->
     <!-- 橙色小按钮背景 -->
