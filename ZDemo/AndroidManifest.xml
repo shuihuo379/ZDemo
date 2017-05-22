@@ -514,6 +514,17 @@
             android:theme="@android:style/Theme.NoTitleBar">
         </activity>
         
+        <activity 
+            android:name="com.itheima.ui.RadioButtonListActivity"
+            android:configChanges="locale|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+            	<action android:name="android.intent.action.MAIN" />
+            	<category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
         <!-- 属性动画案例Demo -->
         <activity 
             android:name="com.itheima.property.animator.CategoryListActivity"
@@ -768,10 +779,6 @@
             android:configChanges="locale|layoutDirection"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         
         <!-- 悬浮窗显示模拟顶层状态栏服务 -->
